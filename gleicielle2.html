@@ -1,0 +1,110 @@
+<html>
+<head>
+     <title> Git (historia, criadores, principais funcionalidades e comandos) </title>
+</head>
+<body>
+<div id="corpo">
+</br>
+<nav id="cabecalho">
+<a id="home" href="indexgleicielle.html">Home</a>
+</nav>
+
+<hgroup>
+
+<h1> Git </h1>
+</br>
+<h2> O que e Git? </h2>
+
+<hgroup>
+
+<p>GIT e um sistema de controle de versao de documentos distribuido capaz de hospedar grandes projetos de codigo aberto como o Kernel Linux. Sua natureza descentralizada facilita a gestao projetos que tem varias equipes de desenvolvimento.
+O presente documento tem como objetivo fornecer, de forma simplificada, o conhecimento necessario para gestao de artefatos atraves de repositorios GIT.</p></br>
+
+<h2>Historia e Criadores</h2>
+<p>Durante a criacao do sistema operacional Kernel Linux, Lius Torvalds, criador do Kernel Linux, observou a necessidade de criar uma ferramenta open source que pudesse realizar o controle de versoes dos codigos fontes de diversos projetos incluindo codigos de banco de dados. Assim surge o Git Version, uma aplicacao distribuada capaz de versionar projetos com velocidade e eficiencia.
+Dentre as caracteristicas do Git, existe o suporte para desenvolvimento linear, ou seja, uma metodologia de programacao onde sao alteradas partes distintas do sistema ao mesmo tempo com o intuito de mescla-las ao final do processo (SILVERIO, 2013).
+O Git contem uma forma diferente do demais sistemas de controle de versao para manipular os dados. A cada mudanca de um projeto versionado pelo Git, e realizado um snapshot (tirada uma foto) dos objetos armazenados. Por exemplo, se algum arquivo nao houve alteracao, o sistema nao armazena o arquivo novamente, apenas acrescenta um 'link' para o objeto anterior identico ao armazenamento anteriormente. Ja os outros sistemas de controle de versao tratam as mudancas feitas nos dados ao longo do tempo como um conjunto de arquivos (MARTINHO; MUNIZ, 2013).
+Inicialmente o Git armazena o conteudo em arquivos com extensao 'sha', para que possa gerar um numero de revisao do arquivo. Tipo de valor que e utilizado na identificacao interna simplificados em outros dois tipos, loose objects e packed objects. Os arquivos do tipo loose objects sao mais simples e armazenados no disco em um unico arquivo. Os packed objects sao mais sofisticados e cada versao e armazenada em objetos separados (ZANATTA; SANTOS, 2012).
+Trabalhando em modo terminal o Git pode ser considerado um pouco complicado no inicio, porem com tempo de experiencia a configuracao se torna mais facil e simples.
+Em outras palavras, o kernel (nucleo) do Linux e um projeto de software de codigo aberto de escopo razoavelmente grande. Durante a maior parte do periodo de manutencao do kernel do Linux (1991-2002), as mudancas no software eram repassadas como patches em arquivos compactados. Em 2002, o projeto do kernel do Linux comecou a usar um sistema DVCS proprietario chamado BitKeeper.
+Em 2005, o relacionamento entre a comunidade que desenvolvia o kernel e a empresa que desenvolvia comercialmente o BitKeeper se desfez, e o status de isento-de-pagamento da ferramenta foi revogado. Isso levou a comunidade de desenvolvedores do Linux (em particular Linus Torvalds, o criador do Linux) a desenvolver sua propria ferramenta baseada nas licoes que eles aprenderam ao usar o BitKeeper. O novo sistema tinha: velocidade, simplicidade, desenvolvimento nao linear, capaz de lidar com grandes projetos como kernel do Linux.
+Desde sua concepcao em 2005, o Git evoluiu e amadureceu a ponto de ser um sistema facil de usar e ainda assim mantem essas qualidades iniciais. E incrivelmente rapido, bastante eficiente, com grandes projetos e possui um sistema impressionante de branching para desenvolvimento nao-linear.
+Isso levou a comunidade de desenvolvedores do Linux (em particular Linus Torvalds, o criador do Linux) a desenvolver sua propria ferramenta baseada nas licoes que eles aprenderam ao usar o BitKeeper. O novo sistema tinha: velocidade, simplicidade, desenvolvimento nao linear, capaz de lidar com grandes projetos como kernel do Linux.
+Desde sua concepcao em 2005, o Git evoluiu e amadureceu a ponto de ser um sistema facil de usar e ainda assim mantem essas qualidades iniciais. E incrivelmente rapido, bastante eficiente com grandes projetos e possui um sistema impressionante de branching para desenvolvimento nao-linear.
+</p>
+</br>
+<h2>Principais funcionalidades e Comandos</h2></br>
+<p>O arquivo git config armazena as configuracoes gerais do sistema Git. Este arquivo fica armazenado no diretorio home do usuario que esta realizando as configuracoes. Existem duas formas de configuracao, de forma mais simples utilizando o comando gitconfig que realiza as configuracoes automaticas, ou da maneira mais complexa que e alterando o arquivo de configuracao normalmente. Dentro dos criterios de utilizacao basica do Git existem os comandos de instalacao, iniciacao e manipulacao de repositorio, modificacoes e clonagem de um repositorio remoto. Pelo terminal, entrar na pasta do projeto a ser iniciado e utilizar o comando $ giti nit. Este comando cria um diretorio invisivel, contendo todos os arquivos necessarios para o repositorio. Para adicionar arquivos em um projeto no repositorio, utilizar o comando $ git add. E para visualizar o status daquilo que foi incluido no projeto deve-se executar o comando $ git status. Feito estes procedimentos resta o comando de $ git commit, assim e enviada uma alteracao para o Sistema Git (CHACON, 2009).</p>
+</br>
+<h2>Comandos Basicos:</h2>
+<p>Para criar um repositorio local:</p>
+&nbsp &nbsp Cria-se uma nova pasta</br>
+&nbsp &nbsp Clique com o botao direito sobre a pasta criada -> Git Create Repository Here -> OK</br>
+&nbsp &nbsp Deve-se Configurar o nome do usuario e o e-mail</br>
+&nbsp &nbsp a.	Botao Direito -> TortoiseGit -> Settings -> Git</br>
+</br>
+<p>Adicionar Novos Arquivos</p>
+&nbsp &nbsp Cria-se os arquivos</br>
+&nbsp &nbsp Adiciona-se os arqivos ao repositorio</br>
+&nbsp &nbsp Clica-se como o botao direito sobre o arquivo -> Tortoise Git -> OK</br>
+</br>
+<p>Salvar as Alteracoes no repositorio local</p>
+&nbsp &nbsp Clica-se com o botao direito -> Git Commit</br>
+&nbsp &nbsp Preencha a mensagem descrevendo tudo o que se foi feito no arquivo</br>
+&nbsp &nbsp Clica-se no botao OK</br> 
+</br>
+<p>Visualizar o Historico de Ateracoes do Repositorio</p>
+&nbsp &nbsp Clica-se  com o botao em -> Tortoise Git -> Show Log</br>
+</br>
+<h2>Trabalhando com Repositorios Remotos</h2>
+<p>Cadastrar um Repositorio Remoto</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Settings -> Git -> Remote</br>
+&nbsp &nbsp URL: Cola-se o endereco do repositorio</br>
+&nbsp &nbsp Clica-se no botao -> Add New/ Save</br>
+&nbsp &nbsp OK</br>
+</br>
+<p>Enviar as Modificacoes do Repositorio Local para o Repositorio Remoto</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Push</br>
+</br>
+<p>Buscar as Modificacoes do Repositorio Local para o Repositorio Local</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Pull</br>
+</br>
+<p>Clonar um Repositorio Existente</p>
+&nbsp &nbsp Cria-se um pasta vazia</br>
+&nbsp &nbsp Botao Direito sobre a pasta criada -> Git Clone</br>
+&nbsp &nbsp Cola-se o URL do Repositorio</br>
+&nbsp &nbsp OK</br>
+</br>
+<h2>Tags e Branches</h2>
+<p>Criar Tag</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Create Tag</br>
+&nbsp &nbsp Nome da Tag</br>
+&nbsp &nbsp OK</br>
+<p>Mudar para uma Tag</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Switch/Checkout</br>
+&nbsp &nbsp Marque Tag</br>
+&nbsp &nbsp Escolha a Tag para qual deseja ir</br>
+&nbsp &nbsp OK</br>
+</br>
+<p>Criar um Branch</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Create Branch</br>
+&nbsp &nbsp Nome do Branch</br>
+&nbsp &nbsp OK</br>
+</br>
+<p>Mudar para um Branch</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Switch/Checkout</br>
+&nbsp &nbsp Marque Branch</br>
+&nbsp &nbsp Escolha o branch para qual deseja ir</br>
+&nbsp &nbsp OK</br>
+</br>
+<p>Mudar Dois Branches</p>
+&nbsp &nbsp Botao Direito -> Tortoise Git -> Merge</br>
+&nbsp &nbsp Marque o Branch do qual virão as alteracoes</br>
+&nbsp &nbsp Coloque uma mensagem</br>
+&nbsp &nbsp OK</br>
+</br>
+<h2>Referencias:</h2>
+<p>https://docs.google.com/document/d/12V3JV6eGcM3ezvXR-8FTpcvXiLQDc6ZVcImn2NWod2M/edit?pli=1#</p>
+<p>http://git-scm.com/book/pt-br/Primeiros-passos-Uma-Breve-Hist%C3%B3ria-do-Git<p>
+
+	 
