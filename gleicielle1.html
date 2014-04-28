@@ -1,0 +1,126 @@
+<html>
+<head>
+	<title> Gestao de Configuracao e Sistemas de Controle de Versoes Locais do GIT </title>
+	<link rel="stylesheet" href="css/estilogleicielle1.css" />
+</head>
+<body>
+<div id="corpo">
+</br>
+<nav id="cabecalho">
+<a id="home" href="indexgleicielle.html">Home</a>
+</nav>
+
+<hgroup>
+
+<h1>Git</h1>
+</br>
+<h2>O que e Git?</h2>
+
+</hgroup>
+
+<p>GIT e um sistema de controle de versao de documentos distribuido capaz de hospedar grandes projetos de codigo aberto como o Kernel Linux. Sua natureza descentralizada facilita a gestao projetos que tem varias equipes de desenvolvimento.
+O presente documento tem como objetivo fornecer, de forma simplificada, o conhecimento necessario para gestao de artefatos atraves de repositorios GIT.</p>
+
+<h1>Gestao de Configuracao</h1>
+</br>
+<h2>Conceito</h2>
+<p>E uma atividade tecnica e gerencial aplicada ao longo de todo o ciclo de vida do software que tem por objetivo garantir a integridade do produto sendo desenvolvido, mantendo um historico de todos os itens sob controle. Basicamente, e composta de quatros tarefas: identificacao da configuracao, controle da configuracao, balanco da configuracao e auditoria de configuracao.</p>
+</br>
+<h2>Responsabilidade</h2>
+<p>A gerencia de configuracao e atividade exercida por tres papeis, cujas responsabilidades sao descritas na tabela abaixo.</p>
+</br>
+<img src="imagem1.bmp">
+</br>
+<h2>Versionameno</h2>
+<p>Os documentos relacionados ao projeto PJe sao mantidos nesta wiki, no testlink e no Redmine. O versionamento adotado para os documentos sera o disponível nas ferramentas citadas. Os codigos fontes, assim como artefatos de banco de dados, sao mantidos no GIT. Seguem direcionamentos a respeito do versionamento dos artefatos.</p>
+</br>
+<h2>Regras de Versionamento</h2>
+<p>O esquema de numeracao de versoes adotado pelo CNJ e baseado no esquema adotado pela organizacao Apache Foundation. O esquema define que uma versao e composta por quatro numeros inteiros, MAJOR.MINOR.MICRO.PATCH onde:</p>
+</br>
+MAJOR:</br>
+<p>Numero principal da versao, somente alterado quando:</p></br>
+&nbsp &nbsp a)ha modificacao de arquitetura do sistema, ainda que nao tenha havido modificacao da estrutura de dados;</br>
+&nbsp &nbsp b)ha modificacao da estrutura de dados que demanda uma migracao significativa de uma base para outra base de dados, nao sendo suficiente a mera concretizacao de scripts de migracao de dados entre tabelas de um mesmo banco de dados.
+Esse numero deve ser 0 para a versao anterior a primeira.</br>
+MINOR:</br>
+<p>Numero menor de versao, modificado sempre que houver inclusao de um ou mais conjuntos de novas funcionalidades. Esse numero deve iniciar em 0 e deve ser reiniciado quando da troca do numero principal.</p></br>
+MICRO:</br>
+<p>Numero micro de versao, modificado sempre que liberada uma versao de correcao de erros ou de comportamento esperado na versao do sistema. Esse numero deve iniciar em 0 e deve ser reiniciado quando da troca do numero intermediario ou do numero principal. Para versoes intermediarias ou principais novas, antes da homologacao, esse numero devera ser acrescido do milestone de liberacao (M1, M2, M3 etc.) ate que a versao seja homologada, quando recebera o numero menor.</p></br>
+PATCH:</br>
+<p>Numero de correcao de versao, modificado sempre que liberada uma versao de correcao de erros criticos do sistema.</p></br>
+<h2>Nomes das versoes do sistema</h2>
+<p>As versoes intermediarias do sistema receberao o nome de municipio brasileiro iniciado na letra de referencia da versao, estas na ordem alfabetica, que nao contenha espacos ou caracteres especiais, obtidos a partir do nome das unidades federativas, essas na ordem alfabetica inversa. Assim, por exemplo, temos:</p></br>
+<img src="imagem2.bmp">
+</br>
+<h2>Repositorios Distribuidos</h2>
+<p>O GIT tem sido amplamente adotado em projetos de codigo e desenvolvimento abertos por permitir a coordenacao de varias equipes de desenvolvimento de forma simples e transparente.
+ Uma organizacao de repositorios distribuidos com tres papeis distintos. A disposicao e formada por um repositorio central (CNJ Abencoado), sob responsabilidade dos lideres do projeto, e repositorios locais para cada equipe participante do desenvolvimento. 
+Cada um dos repositorios locais tem uma equipe formada por desenvolvedores, revisores de codigo e um ou mais gestores. O processo de desenvolvimento estende fluxo definido em Fluxo de trabalho, acrescentando os seguintes passos:
+</p></br>
+&nbsp &nbsp1.	Os desenvolvedores resolvem issues e submetem as alteracoes nos repositorios locais atraves de branches especificos e solicitacoes de merge.</br>
+&nbsp &nbsp2.	Os revisores testam e aprovam as solicitacoes, reintegrando os branches ao master</br>
+&nbsp &nbsp3.	Uma vez revisado, testado e aprovado, o gestor do repositorio local submete a alteracao para o repositorio central e aguarda aprovacao dos gestores do projeto.</br>
+<p>Essa disposicao traz duas vantagens em relacao aos SCVs centralizados: (i) as equipes de locais de desenvolvimento tem total liberdade de organizacao; (ii) os lideres do projeto possuem total controle sobre o codigo submetido.</p></br>
+<h2>Politica de acesso</h2>
+<p>O PJe encerra um desenvolvimento colaborativo intenso que envolve multiplas fabricas de software e analistas de sistemas, muitas vezes nao localizados no mesmo ponto geografico brasileiro. Em razao disso e da intensa necessidade de controle do codigo fonte com vistas a evitar um desenvolvimento nao controlado, o acesso aos artefatos do sistema deve ser bem controlado.Deve-se identificar esses acessos segundo os seguintes papeis:</p>
+<img src="imagem3.bmp">
+<p>Tomando por base tais papeis, os acessos devem ser concedidos seguindo a seguinte tabela:</p>
+<img src="imagem4.bmp">
+<p>, onde:</p>
+&nbsp &nbsp	L = leitura</br>
+&nbsp &nbsp LG = leitura e gravacao</br>
+&nbsp &nbsp LG* = leitura e gravacao limitadas ao branch afetado a essa fabrica, ou no trunk, se atuando no trunk, devendo ela assegurar que os papeis correspondentes internos, nesses casos, respeitem iguais regras de permissao.</br>
+</br>
+<h2>Termos e abreviacoes</h2>
+Artefato:</br>
+</p>Qualquer produto do ciclo de producao do projeto, podendo ser arquivos eletronicos de codigo-fonte, arquivos eletronicos de codigo compilado, a reuniao desses arquivos, arquivos de documentacao ou mesmo objetos fisicos, como manuais impressos ou discos de instalacao</p>
+Repositorio;</br>
+<p>Sistema de controle de versoes de artefatos eletronicos em que os itens de configuracao eletronicos sao armazenados com a garantia de possibilidade de reversao a uma versao anterior do item;</p>
+SCV:</br>
+<p>Sistema de Controle de Versoes;</p>
+Baseline:</br>
+<p>Conjunto de artefatos aprovados e revisados que serao utilizados para atividades posteriores. E definida pela gerencia de projeto como base para evolucoes e desenvolvimento futuro;</p>
+<p>Linha de desenvolvimento paralela a linha principal do repositorio de coidgo-fonte e documentacao;</p>
+Tag:</br>
+<p>Rotulo de identificacao de um conjunto de itens de configuracao que representa um todo de interesse. Ordinariamente, as versoes de release e as baselines sao identificadas com tags para melhor referencia;</p>
+Trunk/Master:</br>
+<p>Linha principal de desenvolvimento existente no repositorio;</p>
+Merge:</br>
+<p>Operacao de integracao de alteracoes de um determinado branch (ramo) ao trunk ou a outro branch;</p>
+Release</br>
+<p>Versao do sistema validada para instalacao, seja em producao, seja para homologacao. Conjunto de itens enviado a um tribunal ou a um departamento para instalacao, que nao deve conter o codigo-fonte do sistema. Cada release pode encerrar novas funcionalidades ou mudancas decorrentes de evolucao do sistema;</p>
+Commit</br>
+<p>Submeter ao sistema de controle de versao alteracaes em um conjunto de arquivos;</p>
+Checkout</br>
+<p>Copiar uma versao dos arquivos do sistema de controle de versao. Geralmente esta operacao copia a ultima versao dos arquivos e, em alguns SCVs, o checkout inclui metadados necessarios para o proximo commit.</p>
+</br>
+<h1>Gestao de Versoes</h1>
+</br>
+<h2>Sistemas de Controle de Versao</h2>
+</br>
+<h2>Conceito</h2>
+<p>Softwares de controle de verso sao sistemas que registram as alteracoes em um conjunto de arquivos ao longo do tempo de modo a permitir a recuperacao de versoes especificas quando necessario.
+Alem de registrar as alteracoes de um conjunto de arquivos, os sistema de controle de versao podem conter outras funcionalidades e sao divididos em tres categorias principais.</p>
+</br>
+<h2>Sistema de Controle de Versao Local</h2>
+<p>O metodo mais utilizado pelos usuarios para controle de versao e copiar os arquivos em outro diretorio. Esta abordagem e comum devido a sua simplicidade, mas tambem muito suscetivel a erros. E facil esquecer em que diretorio esta e acabar removendo ou sobrescrevendo o arquivo errado. Para resolver estes problemas, os programadores desenvolveram Sistemas de Controle de Versao (SCV) locais que possuem um simples banco de dados contendo todas as alteracoes dos arquivos, conforme a figura:</p></br>
+<img src="_imagens/imagens_da_primeira_pesquisa/imagem5.bmp">
+</br>
+<p>Um dos sistemas de controle de versao mais populares e o rcs, incluso em varias distribuicoes Linux e no sistema operacional Mac OSX. Essa ferramenta funciona basicamente mantendo conjuntos de mudanacas em um formato especial no disco. Dessa forma, o sistema permite a recriacao de qualquer arquivo em qualquer momento aplicando as mudancas registradas.</p>
+</br>
+<h2>Sistema de Controle de Versao Centralizado</h2>
+<p>Quando existe a necessidade de colaboracao de um grupo de pessoas sobre um conjunto de arquivos, os SCV locais passam a nao atender. Para resolver esse problema, sistemas de controle de versao centralizados (SCVC) foram desenvolvidos. Tais sistemas, como CVS, SVN e Perforce, trm um unico servidor que contem todos os arquivos versionados e um numero de usuarios que realizam checkout (isto e, copiam a ultima versao do arquivo) de um local central.</p></br>
+<img src="imagem6.bmp">
+</br>
+<p>Essa configuracao oferece uma seria de vantagens, especialmente sobre os SCV locais. Por exemplo, todos os usuarios sabem, ate certo ponto, o que outros usuarios do mesmo projeto estao fazendo. Os administradores possuem um controle refinado sobre quem pode fazer o que, o que torna a administracao destes repositorios muito mais simples do que lidar com bancos de dados locais em cada cliente. No entanto, esta mesma configuracaao tambem tem algumas desvantagens serias. O mais obvio e o unico ponto de falha que o servidor centralizado representa. Se esse servidor cair por uma hora, durante aquela hora ninguem podera colaborar ou ate mesmo salvar as alteracoes realizadas nos arquivos em que estavam trabalhando. Se o disco rigido do servidor central for corrompido, e nenhum backup tenha sido realizado, todos os dados guardados serao perdidos, todo o historico do projeto, exceto alguns arquivos que estiverem guardados nos computadores clientes. SCV locais sofrem do mesmo problema, sempre que o historico for guardado em um unico lugar, corre-se o risco de perder tudo.</p>
+</br>
+<h2>Sistema de Controle de Versao Distribuido</h2>
+<p>E no problema do unico ponto de falha que os Sistemas de Controle de Versao Distribuidos entram em cena. Em tais sistemas como Git, Mercurial, Bazaar ou Dracs, os clientes possuem um espelho completo do conteudo do servidor, em vez de uma unica versao do arquivo. Assim, se o servidor ficar corrompido, qualquer usuario do sistema pode restaurar completamente o historico de modificacoes do projeto, evitando que os dados sejam perdidos. Nesses sistemas, cada checkout e uma copia completa do conteudo do servidor. </p></br>
+<img src="imagem7.bmp">
+</br>
+<p>E no problema do unico ponto de falha que os Sistemas de Controle de Versao Distribuidos entram em cena. Em tais sistemas como Git, Mercurial, Bazaar ou Dracs, os clientes possuem um espelho completo do conteudo do servidor, em vez de uma unica versao do arquivo. Assim, se o servidor ficar corrompido, qualquer usuario do sistema pode restaurar completamente o historico de modificacoes do projeto, evitando que os dados sejam perdidos. Nesses sistemas, cada checkout e uma copia completa do conteudo do servidor.</p>
+</br>
+<h2>Referencias:</h2>
+<p>http://www.cnj.jus.br/wikipje/index.php/GIT#Gest.C3.A3o_de_configura.C3.A7.C3.A3o</p>
+
+
