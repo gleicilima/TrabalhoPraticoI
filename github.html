@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<h1 align="center">
+	<title>GitHub (historia, criadores, principais funcionalidades e comandos)</title>	
+
+</head>
+<body meta charset="UTF8" alig "center" bgcolor="#ffffff>
+	<hgroup>
+	<h1> ALIGN="CENTER">GitHub (historia, criadores, principais funcionalidades e comandos)</h1></br>
+	<font align="justin">
+	<p>GitHub e um servico de hospedagem baseado na web para projetos
+	de desenvolvimento de software que usam o sistema de controle de revisao Git.</p>
+ 
+	<p>GitHub oferece dois planos pagos para repositorios privados e contas gratuitas para 
+	projetos de codigo aberto.</p>
+ 
+	<p> O site foi lançado em 2008 por Tom Preston-Werner, Chris Wanstrath e PJ Hyett.</p>
+ 
+	<p>O site fornece redes sociais funcionalidade, como feeds, seguidores, 
+	wikis (usando gollum software Wiki ) e o grafico de rede social para mostrar como 
+	os desenvolvedores trabalham em suas versoes de um repositorio.</p>
+
+	<p>GitHub tambem opera outros serviços: a pastebin site de estilo chamado Gist  que 
+	fornece wikis para repositorios individuais e paginas web que podem ser 
+	editados atraves de um repositorio Git, um serviço de hospedagem de slides chamado 
+	Speaker Deck, e uma análise da web plataforma chamado Gauges.</p> 
+ 
+	<p>O software que é executado GitHub foi escrito usando Ruby on Rails e Erlang por
+	GitHub, Inc. (anteriormente conhecido como impressionantes logicos) desenvolvedores
+	Chris Wanstrath, PJ Hyett, e Tom Preston-Werner .</p>
+
+	<p>Em 21 de Setembro de 2011, GitHub anunciou que havia alcançado mais de 1 milhao de usuarios. </p>
+
+	<p>Em 13 de setembro de 2012, em sua homepage, GitHub anunciou que teve mais de 2,1 milhoes de usuarios de
+	hospedagem mais de 3,7 milhoes de repositorios. </p>
+ 
+	<p>Em 19 de dezembro de 2012, GitHub anunciou que teve mais de 2,8 milhoes de usuarios de hospedagem mais de
+	4,6 milhoes repositórios. </p>
+ 
+	<p>Em 16 de janeiro de 2013, GitHub anunciou que tinha passado os 3 milhões de usuários marcam e foi ent&atilde;o
+	que hospeda mais de 5 milhoes de repositorios.</p> 
+
+	<p>Em 10 de abril de 2013, GitHub anunciaram que tinha 3,5 milhões de usuários e agora hospeda mais de
+	6 milhões de repositorios. </p>
+
+	<p>Em 23 de dezembro de 2013, GitHub anunciaram ter chegado a 10 milhões de repositórios. </p>
+
+	<p>GitHub, Inc. foi fundada em 2008 e está sediada em San Francisco, Califórnia. </p>
+
+	<h2><P ALIGN="CENTER">Criando um repositorio</P></h2>
+
+	<p>Para criar um repositório no GitHub, clique no botão New repository disponível na sua página 
+	inicial,especifique um nome e opcionalmente uma descrição. </p>
+	<p>Aqui neste exemplo vou criar um repositório 
+	chamado git-teste.</p>
+ 
+	<p>Até aqui o repositório foi criado no GitHub, e isso é importante pois 
+	agora temos um endereço no servidor para onde vamos enviar os arquivos criados localmente. 
+	Agora é a hora de criar um diretório local e iniciar o Git
+	fazendo ele se comunicar com o servidor. </p><br>
+	<p>Para isso fazemos</p>
+	 <li>cria o diretório</li><br>
+	 <li>mkdir git-teste</li><br>
+	 <li>entra</li><br>
+	 <li>cd git-teste</li><br>
+	 <li>inicia o git</li><br>
+	 <li>git init</li><br>
+	<p>O comando git init serve para "iniciar" o rastreamento de arquivos pelo Git.</p>
+	<p> Esse comando cria um diretório (oculto).</p>
+	<p>Git, contendo as configurações necessárias para o funcionamento do sistema.
+	Esse comando só é necessário uma vez.</p>
+	<p>Para informar o Git que este diretório deve se comunicar com o servidor do GitHub criado acima fazemos<br>
+	git remote add origin git@github.com:fernandomayer/git-teste.</p>
+	<p> O comando git remote add serve para adicionar um repositório "remoto", que por padrão o Git chama de origin,
+	e que nada mais é do que um "atalho" para o endereço do servidor.</p>
+	<p> Note que neste caso estamos usando um 
+	endereço no formato do SSH, mas poderia ser também o endereço https.</p>
+	<p>Nesse ponto podemos utilizar o comando git status para verificar o que está contecendo no repositório</p><br>
+	<li>Git status</li> <br>
+	<li>On branch master</li><br>
+	<li>Initial commit</li><br>
+	
+	<p>nothing to commit (create/copy files and use "git add" to track)
+	Duas coisas chamam a atenção: o Git está mostrando que estamos em um branch (ramo) chamado master,
+	e que não há nada para ser enviado ou adicionado ao repositório (commit).</p>
+	<p> Um branch é como uma "linha de desenvolvimento",sendo que sempre deve existir uma principal 
+	(que por padrão é chamada de master), mas podem existir muitas outras.</p>
+	<p>Por enquanto vamos trabalhar apenas com o branch principal.</p>
+	
+	<h2><p align="center">Criando e Rastreando Arquivos</p></h2>
+	<p>Para começar a usar o Git precisamos criar arquivos. </p>
+	<p>No GitHub, um arquivo chamdo README serve para identificar
+	um projeto e aparece automaticamente na página principal do repositório.</p>
+	<p>Por isso, vamos criar esse arquivo 
+	(usando um editor de texto qualquer) e adicionar algum texto como
+	Repositório criado para testes com o GitHub.</p>
+	<p>Depois de salvar o arquivo podemos ver novamente o status</p><br>
+	<li>git status </li><br>
+	<li>On branch master</li><br>
+	<li>Initial commit</li><br>
+	<li>Untracked files:</li><br>
+	(use "git add <file>..." to include in what will be committed)<br>
+	README<br>
+	<p>nothing added to commit but untracked files present (use "git add" to track)
+	Agora vemos que o Git automaticamente identificou que existe um arquivo criado no reposit&oacute;rio, mas ele ainda 
+	não está sendo rastreado.</p> 
+	<p>Se quisermos que o Git rastreie todas as modificações de um arquivo
+	temos que adicioná-lo ao repositório com o comando git add</p>
+	•	git add README<br>
+	<p>E o status irá mostrar que o arquivo foi adicionado, mas ainda não foi enviado para o repositório local</p>
+	•	 git status <br>
+	•	 On branch master<br>
+	•	 Initial commit<br>
+	•	Changes to be committed:<br>
+	•	   (use "git rm --cached <file>..." to unstage)<br>
+	•	   new file:   README<br>
+	<p>Nesse momento, o arquivo está em uma staging area, ou um lugar pronto para ser enviado ao repositório local. </p>
+	<p>Até aqui o arquivo não faz parte do repositório do Git! Para isso temos que "enviá-lo", ou fazer um 
+	commit</p>
+	•	git commit -m 'comentário'
+	[master (root-commit) 1490ab0] primeiro commit
+	1 file changed, 1 insertion(+)
+	create mode 100644 README
+	•	 git status <br>
+	•	 On branch master<br>
+	<p>nothing to commit (working directory clean)
+	Repare que a flag -m serve para adicionar um comentário sobre o commit que você está fazendo.</p>
+	<p> Adicionar um comentário é obrigatório para todos os commits.</p> 
+	<p>Se você não usar o -m, o editor de texto padrão do 
+	seu sistema (ou aquele configurado inicialmente com core.</p>
+	<p> editor, ver a etapa de configuração) irá abrir para que você entre com uma mensagem.</p>
+	<p>Alternativamente, podemos adicionar o arquivo (git add) e fazer o commit (git commit) em apenas uma etapa, usando a 
+	opção -a no commit</p>
+	•	git commit -a -m 'comentário'<br>
+	<p>Dessa forma o arquivo é indexado diretamente, sem passar pela staging area. A vantagem é que elimina um comando.</p>
+	<p>A desvantagem é que não existe mais a chance de reverter um arquivo (unstage) antes de comitar.</p>
+	<p>Agora que o arquivo foi comitado, ele faz parte do repositório do Git, mas apenas localmente.</p>
+	<p> Para enviá-lo ao servidor remoto (já configurado), usamos o comando git push com dois argumentos.</p>
+	<p> O primeiro indica o servidor remoto 
+	(origin), e o segundo o branch (master)</p>
+	•	git push origin master 
+
+
+</body>	
+</html>
+
